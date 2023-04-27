@@ -5,7 +5,11 @@ import logo from "../assets/logo_kemkes.png";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+<<<<<<< HEAD
 
+=======
+import Pengumuman from "./../pages/Pengumuman";
+>>>>>>> 8df0a565a4350aad3389a3170ec981e37a2db27e
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -393,166 +397,178 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <ul className={!nav ? "hidden" : " bg-transparent text-white text-center w-full px-8"}>
-        <li className="border-b-2 border-zinc-300 w-full py-2">
-          <span
-            onClick={() => handleClickHome(Navbar.i)}
-            smooth={true}
-            duration={500}
-          >
-            Home
-          </span>
-        </li>
-        <li className="border-b-2 border-zinc-300 w-full py-2">
-        <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold">
-                    Informasi
-                    <ChevronDownIcon
-                      className="-mr-1 h-5 w-5 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
+      <ul
+        className={
+          !nav ? "hidden" : " bg-cyan-950 text-white text-center w-full px-8"
+        }
+      >
+        <ul
+          className={
+            !nav
+              ? "hidden"
+              : " bg-transparent text-white text-center w-full px-8"
+          }
+        >
+          <li className="border-b-2 border-zinc-300 w-full py-2">
+            <span
+              onClick={() => handleClickHome(Navbar.i)}
+              smooth={true}
+              duration={500}
+            >
+              Home
+            </span>
+          </li>
+          <li className="border-b-2 border-zinc-300 w-full py-2">
+            <Menu as="div" className="relative inline-block text-left">
+              <div>
+                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold">
+                  Informasi
+                  <ChevronDownIcon
+                    className="-mr-1 h-5 w-5 text-gray-400"
+                    aria-hidden="true"
+                  />
+                </Menu.Button>
+              </div>
 
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            onClick={() => handleClickAlur(Navbar.i)}
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Alur Pendaftaran
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            onClick={() => handleClickKetentuan(Navbar.i)}
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Ketentuan dan Prasyarat
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </div>
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            onClick={() => handleClickProsedur(Navbar.i)}
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Prosedur
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            onClick={() => handleClickPembiayaan(Navbar.i)}
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Pembiayaan
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </div>
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            onClick={() => handleClickInstitusi(Navbar.i)}
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Institusi yang Dipilih
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            onClick={() => handleClickJadwal(Navbar.i)}
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Jadwal Rekrutmen
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
-        </li>
-        <li className="border-b-2 border-zinc-300 w-full py-2">
-          <span
-            onClick={() => handleClickDokumen(Navbar.i)}
-            smooth={true}
-            duration={500}
-          >
-            Dokumen
-          </span>
-        </li>
-        <li className="border-b-2 border-zinc-300 w-full py-2">
-          <span
-            onClick={() => handleClickPengumuman(Navbar.i)}
-            smooth={true}
-            duration={500}
-          >
-            Pengumuman
-          </span>
-        </li>
-        <li className="border-b-2 border-zinc-300 w-full py-2">
-          <span
-            onClick={() => handleClickBrosur(Navbar.i)}
-            smooth={true}
-            duration={500}
-          >
-            Brosur
-          </span>
-        </li>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handleClickAlur(Navbar.i)}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Alur Pendaftaran
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handleClickKetentuan(Navbar.i)}
+                          href="#"
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Ketentuan dan Prasyarat
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </div>
+                  <div className="py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handleClickProsedur(Navbar.i)}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Prosedur
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handleClickPembiayaan(Navbar.i)}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Pembiayaan
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </div>
+                  <div className="py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handleClickInstitusi(Navbar.i)}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Institusi yang Dipilih
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          onClick={() => handleClickJadwal(Navbar.i)}
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Jadwal Rekrutmen
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </div>
+                </Menu.Items>
+              </Transition>
+            </Menu>
+          </li>
+          <li className="border-b-2 border-zinc-300 w-full py-2">
+            <span
+              onClick={() => handleClickDokumen(Navbar.i)}
+              smooth={true}
+              duration={500}
+            >
+              Dokumen
+            </span>
+          </li>
+          <li className="border-b-2 border-zinc-300 w-full py-2">
+            <span
+              onClick={() => handleClickPengumuman(Navbar.i)}
+              smooth={true}
+              duration={500}
+            >
+              Pengumuman
+            </span>
+          </li>
+          <li className="border-b-2 border-zinc-300 w-full py-2">
+            <span
+              onClick={() => handleClickBrosur(Navbar.i)}
+              smooth={true}
+              duration={500}
+            >
+              Brosur
+            </span>
+          </li>
+        </ul>
       </ul>
     </div>
   );
