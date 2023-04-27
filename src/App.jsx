@@ -15,6 +15,13 @@ import Pengumuman from "./pages/Pengumuman";
 import Brosur from "./pages/Brosur";
 import InstitusiDipilih from "./pages/Info/InstitusiDipilih";
 import Jadwal from "./pages/Info/Jadwal";
+import MateriPertemuan from "./pages/Dokumen/MateriPertemuan";
+import Penelitian from "./pages/Dokumen/Penelitian";
+import Peraturan from "./pages/Dokumen/Peraturan";
+import SK from "./pages/Dokumen/SK";
+import SuratEdaran from "./pages/Dokumen/SuratEdaran";
+import TransportKedatangan from "./pages/Dokumen/TransportKedatangan";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -34,8 +41,15 @@ const App = () => {
           <Route path="/Ketentuan" element={<Ketentuan />} />
           <Route path="/Pembiayaan" element={<Pembiayaan />} />
           <Route path="/Pendaftaran" element={<Pendaftaran />} />
-          <Route path="/Login" element={<Login />} />
           <Route path="/Prosedur" element={<Prosedur />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Materi_Pertemuan" element={<MateriPertemuan/>} />
+          <Route path="/Penelitian" element={<Penelitian />} />
+          <Route path="/Peraturan" element={<Peraturan />} />
+          <Route path="/SK" element={<SK />} />
+          <Route path="/Surat_Edaran" element={<SuratEdaran />} />
+          <Route path="/Transportasi_Kedatangan" element={<TransportKedatangan />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>

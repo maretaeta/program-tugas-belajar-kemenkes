@@ -5,7 +5,7 @@ import logo from "../assets/logo_kemkes.png";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Pengumuman from './../pages/Pengumuman';
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -48,8 +48,26 @@ const Navbar = () => {
   const handleClickDokumen = (i) => {
     navigate(`/DownloadDokumen`);
   };
+  const handleClickMateri = (i) => {
+    navigate(`/Materi_Pertemuan`);
+  };
+  const handleClickPenelitian = (i) => {
+    navigate(`/Penelitian`);
+  };
+  const handleClickPeraturan = (i) => {
+    navigate(`/Peraturan`);
+  };
+  const handleClickSK = (i) => {
+    navigate(`/SK`);
+  };
   const handleClickBrosur = (i) => {
     navigate(`/Brosur`);
+  };
+  const handleClickSuratEdaran = (i) => {
+    navigate(`/Surat_Edaran`);
+  };
+  const handleClickTransportasi = (i) => {
+    navigate(`/Transportasi_Kedatangan`);
   };
   const handleClickHome = (i) => {
     navigate(`/`);
@@ -66,7 +84,7 @@ const Navbar = () => {
           />
         </div>
         <div className="">
-          <ul className="hidden lg:flex font-semibold gap-3 md:gap-9">
+          <ul className="hidden lg:flex font-semibold gap-3 md:gap-12">
             <li
               className="hover:text-subMain relative cursor-pointer transition-all 
             before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
@@ -127,7 +145,6 @@ const Navbar = () => {
                         {({ active }) => (
                           <a
                             onClick={() => handleClickKetentuan(Navbar.i)}
-                            href="#"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -213,14 +230,127 @@ const Navbar = () => {
             before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
             before:duration-500 before:bg-subMain hover:before:w-full hover:before:opacity-100"
             >
-              <span
-                to="home"
-                smooth={true}
-                duration={500}
-                onClick={() => handleClickDokumen(Navbar.i)}
-              >
-                Dokumen
-              </span>
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <Menu.Button className="flex w-full justify-center gap-1 rounded-md ">
+                   Download Dokumen
+                    <ChevronDownIcon
+                      className=" h-5 w-5 text-gray-400 mt-1"
+                      aria-hidden="true"
+                    />
+                  </Menu.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={() => handleClickSK(Navbar.i)}
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            SK
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={() => handleClickSuratEdaran(Navbar.i)}
+                            href="#"
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            Surat Edaran
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={() => handleClickTransportasi(Navbar.i)}
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            Transportsi Kedatangan
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={() => handleClickMateri(Navbar.i)}
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            Materi Pertemuan
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={() => handleClickPenelitian(Navbar.i)}
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            Penelitian
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={() => handleClickPeraturan(Navbar.i)}
+                            className={classNames(
+                              active
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block px-4 py-2 text-sm"
+                            )}
+                          >
+                            Peraturan
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </li>
             <li
               className="hover:text-subMain relative cursor-pointer transition-all 
