@@ -7,6 +7,7 @@ import Pendaftaran from "./pages/Info/Pendaftaran";
 import Prosedur from "./pages/Info/Prosedur";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
+import  Daftar  from "./pages/Daftar";
 import Dokumen from "./pages/Dokumen";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Footer } from "./components/Footer";
@@ -23,6 +24,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Alur" element={<Alur />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Daftar" element={<Daftar />} />
           <Route path="/DownloadDokumen" element={<Dokumen />} />
           <Route path="/Pengumuman" element={<Pengumuman />} />
           <Route path="/Brosur" element={<Brosur />} />

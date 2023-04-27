@@ -4,8 +4,17 @@ import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { RiLoginBoxLine, RiCustomerService2Line } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+  const navigate = useNavigate()
+  const handleClickLogin = (i) => {
+    navigate(`/Login`);
+  };
+  const handleClickDaftar = (i) => {
+    navigate(`/Daftar`);
+  };
   return (
     <div className="lg:mt-[-68px] mt-[-51px] md:mt-[-68px]">
       <Swiper
@@ -55,13 +64,13 @@ const Header = () => {
       </Swiper>
 
       <div className="flex justify-center gap-2 py-16 ">
-        <div className="bg-blue-600 text-white text-center py-2 px-3 border-blue-600">
+        <div className="bg-blue-600 text-white text-center py-2 px-3 border-blue-600" onClick={() => handleClickDaftar(Header.i)}>
           <div className="flex justify-center text-4xl md:text-7xl">
             <RiCustomerService2Line />
           </div>
           <h1 className="md:text-xl">PENDAFTARAN</h1>
         </div>
-        <div className="bg-blue-600  text-white py-2 md:px-10 px-11 border-blue-600">
+        <div className="bg-blue-600  text-white py-2 md:px-10 px-11 border-blue-600" onClick={() => handleClickLogin(Header.i)}>
           <div className="flex justify-center md:text-7xl text-4xl">
             <RiLoginBoxLine />
           </div>
