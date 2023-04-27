@@ -262,7 +262,11 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <ul className={!nav ? "hidden" : " bg-white text-center w-full px-8"}>
+      <ul
+        className={
+          !nav ? "hidden" : " bg-cyan-950 text-white text-center w-full px-8"
+        }
+      >
         <li className="border-b-2 border-zinc-300 w-full py-2">
           <span
             onClick={() => handleClickHome(Navbar.i)}
