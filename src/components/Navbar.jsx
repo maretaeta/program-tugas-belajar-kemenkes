@@ -5,11 +5,6 @@ import logo from "../assets/logo_kemkes.png";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-<<<<<<< HEAD
-
-=======
-import Pengumuman from "./../pages/Pengumuman";
->>>>>>> 8df0a565a4350aad3389a3170ec981e37a2db27e
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
