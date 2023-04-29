@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios  from 'axios';
 
 const Daftar = () => {
   const [value, setValue] = useState("");
+  const [provs, setProvs] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`)
+      .then((response) => {
+        setProvs(response.data.result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+  
   return (
     <div className="max-w-7xl md:mx-auto mx-5 ">
       <div className="my-16">
@@ -33,7 +47,7 @@ const Daftar = () => {
             </div>
             <div className="">
               <select
-                className="rounded-md border-gray-300 border-2 block mt-2"
+                className="rounded-sm border-gray-300 border-2 block mt-2"
                 id="question"
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
@@ -162,6 +176,67 @@ const Daftar = () => {
               />
             </div>
           </div>
+          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+            <div className="mx-5">
+              <p>Telepon Rumah * :</p>
+              <p className="text-red-500 text-sm italic">* Phone Number</p>
+            </div>
+            <div className="mt-1 grid">
+              <input
+                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                placeholder=" 08XXXXXXXXXXXX"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 pt-5 border-b pb-5 border-b-gray-600">
+            <div className="mx-5">
+              <p>Jenjang Pendidikan * :</p>
+              <p className="text-red-600 text-sm italic">* yang diinginkan</p>
+            </div>
+            <div className="">
+              <select
+                className="rounded-sm border-gray-300 border-2 block mt-2"
+                id="question"
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
+              >
+                <option value="">Pilih Jenjang</option>
+                <option value=""> D-IV</option>
+                <option value="">D-IV dengan profesi</option>
+                <option value="">S-1</option>
+                <option value="">S-1 dengan profesi (non dokter)</option>
+                <option value="">Profesi (non dokter)</option>
+                <option value="">S-2</option>
+                <option value="">S-2 dengan spesialis Keperawatan</option>
+                <option value="">Spesialis Keperawatan</option>
+                <option value="">S-3 (Dosen, WI, Peneliti)</option>
+                <option value="">Doble Degree</option>
+              </select>
+            </div>
+          </div>
+          {provs.map((q) =>(
+            <div className="grid grid-cols-2 pt-5" key={q.id}>
+            <div className="mx-5">
+              <p>Jenjang Pendidikan * :</p>
+              <p className="text-red-600 text-sm italic">* yang diinginkan</p>
+            </div>
+            <div className="" >
+              <select
+                className="rounded-sm border-gray-300 border-2 block mt-2"
+                id="question"
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
+              >
+                <option key={q.id}>{p.name}</option>
+              </select>
+            </div>
+          </div>
+
+          ))}
+          
+        </div>
+        <div className="pt-5">
+          <h1 className="bg-blue-600 mb-4 pl-5">Persayaratan Status Kepegawaian</h1>
         </div>
       </form>
     </div>

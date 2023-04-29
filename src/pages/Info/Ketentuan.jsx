@@ -25,7 +25,7 @@ const Ketentuan = () => {
             Kepangkatan atau Surat Pencantuman Gelar Pendidikan terakhir atau
             surat keterangan proses pecantuman gelar).
           </li>
-          <li>Usia maksimal pada1 September 2020 bagi :</li>
+          <li>Usia maksimal pada 1 September 2020 bagi :</li>
         </ol>
       </div>
 
