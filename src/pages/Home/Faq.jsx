@@ -37,14 +37,20 @@ function Faq() {
     },
   ];
 
-
-  return (    
-    <div name="Faq" className='max-w-7xl mx-5 xl:mx-auto py-9'>
+  return (
+    <div name="Faq" className="max-w-7xl mx-5 xl:mx-auto py-9">
       <div className=" mx-auto gap-10">
-          <div className='text-center md:text-center'>
-          <h1 className='pb-5 pt-10 text-4xl font-bold text-center'>Frequently Asked Question</h1>
-          <p className='text-sm md:mr-16 pb-7'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit explicabo quibusdam, et aspernatur similique, voluptas nobis, incidunt dignissimos accusamus distinctio repudiandae fugit aliquam nulla totam. Debitis error assumenda mollitia dolorum!</p>
-          </div>
+        <div className="text-center md:text-center">
+          <h1 className="pb-5 pt-10 text-4xl font-bold text-center">
+            Frequently Asked Question
+          </h1>
+          <p className="text-sm md:mr-16 pb-7">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
+            explicabo quibusdam, et aspernatur similique, voluptas nobis,
+            incidunt dignissimos accusamus distinctio repudiandae fugit aliquam
+            nulla totam. Debitis error assumenda mollitia dolorum!
+          </p>
+        </div>
       </div>
       <div>
         {cardIsi.map((faq_info, i) => (

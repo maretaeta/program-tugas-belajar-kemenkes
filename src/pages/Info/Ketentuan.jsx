@@ -2,10 +2,34 @@ import React from "react";
 
 const Ketentuan = () => {
   return (
-    <div className="max-w-7xl mx-auto mb-10 p-5 h-screen">
-      <div className="font-bold text-center text-3xl p-5">
-        <h1>Ketentuan dan Persyaratan</h1>
+    <div className="mx-auto mb-10 p-10 h-screen">
+      <h1 className="font-bold text-3xl py-4">Ketentuan dan Persyaratan</h1>
+
+      {/* BAGAN A */}
+      <div className="pt-5 p-2">
+        <h1 className="font-semibold text-xl ">
+          A. Ketentuan dan Persyaratan Calon Peserta Tugas Belajar SDM Kesehatan
+        </h1>
+        <ol className="list-decimal pl-11 text-lg">
+          <li>PNS Kementerian Kesehatan.</li>
+          <li>
+            PNS tenaga kesehatan yang bertugas di Dinas Kesehatan Prov/Kab/Kota,
+            Rumah Sakit, Puskesmas dan jaringan layanan Puskesmas.
+          </li>
+          <li>
+            Masa kerja minimal 1 (satu) tahun terhitung sejak diangkat sebagai
+            PNS.
+          </li>
+          <li>
+            Telah penyesuaian Ijazah (gelar terakhir tercantum dalam SK
+            Kepangkatan atau Surat Pencantuman Gelar Pendidikan terakhir atau
+            surat keterangan proses pecantuman gelar).
+          </li>
+          <li>Usia maksimal pada1 September 2020 bagi :</li>
+        </ol>
       </div>
+
+      {/* TABEL 1 */}
       <div className="py-5">
         <table className="w-full m-auto border-2 leading-10">
           <thead className="bg-cyan-950 text-white font-bold">

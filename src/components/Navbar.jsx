@@ -5,11 +5,7 @@ import logo from "../assets/logo_kemkes.png";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-<<<<<<< HEAD
-
-=======
 import Pengumuman from "./../pages/Pengumuman";
->>>>>>> 8df0a565a4350aad3389a3170ec981e37a2db27e
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -237,7 +233,7 @@ const Navbar = () => {
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="flex w-full justify-center gap-1 rounded-md ">
-                   Download Dokumen
+                    Download Dokumen
                     <ChevronDownIcon
                       className=" h-5 w-5 text-gray-400 mt-1"
                       aria-hidden="true"
