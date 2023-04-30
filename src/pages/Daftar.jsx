@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios  from 'axios';
+import axios from "axios";
 
 const Daftar = () => {
   const [value, setValue] = useState("");
@@ -15,7 +15,7 @@ const Daftar = () => {
         console.error(error);
       });
   }, []);
-  
+
   return (
     <div className="max-w-7xl md:mx-auto mx-5 ">
       <div className="my-16">
@@ -214,29 +214,29 @@ const Daftar = () => {
               </select>
             </div>
           </div>
-          {provs.map((q) =>(
+          {provs.map((q) => (
             <div className="grid grid-cols-2 pt-5" key={q.id}>
-            <div className="mx-5">
-              <p>Jenjang Pendidikan * :</p>
-              <p className="text-red-600 text-sm italic">* yang diinginkan</p>
+              <div className="mx-5">
+                <p>Jenjang Pendidikan * :</p>
+                <p className="text-red-600 text-sm italic">* yang diinginkan</p>
+              </div>
+              <div className="">
+                <select
+                  className="rounded-sm border-gray-300 border-2 block mt-2"
+                  id="question"
+                  onChange={(e) => setValue(e.target.value)}
+                  value={value}
+                >
+                  <option key={q.id}>{p.name}</option>
+                </select>
+              </div>
             </div>
-            <div className="" >
-              <select
-                className="rounded-sm border-gray-300 border-2 block mt-2"
-                id="question"
-                onChange={(e) => setValue(e.target.value)}
-                value={value}
-              >
-                <option key={q.id}>{p.name}</option>
-              </select>
-            </div>
-          </div>
-
           ))}
-          
         </div>
         <div className="pt-5">
-          <h1 className="bg-blue-600 mb-4 pl-5">Persayaratan Status Kepegawaian</h1>
+          <h1 className="bg-blue-600 mb-4 pl-5">
+            Persayaratan Status Kepegawaian
+          </h1>
         </div>
       </form>
     </div>

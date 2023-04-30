@@ -42,8 +42,8 @@ const Pembiayaan = () => {
       {dataIsi.map((data, i) => (
         <div className="py-5 p-8 ">
           <div className="bg-white border-2 border-red-700 rounded-xl" key={i}>
-            <div className="bg-red-700 rounded-xl w-20 text-white text-center">
-              Info {data.id}
+            <div className="bg-red-700 rounded-xl w-8 text-white text-center">
+              {data.id}
             </div>
             <div className="flex p-2 gap-6">
               <img src={data.img} className="w-28 h-20" />

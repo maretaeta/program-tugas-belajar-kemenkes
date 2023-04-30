@@ -10,7 +10,7 @@ const DataKetentuan = {
       text: " Masa kerja minimal 1 tahun terhitung sejak diangkat sebagai PNS.",
     },
     {
-      text: "  Telah penyesuaian Ijazah    (gelar terakhir tercantum dalam SK Kepangkatan atau Surat Pencantuman Gelar Pendidikan terakhir atau surat keterangan proses pecantuman gelar)",
+      text: "  Telah penyesuaian Ijazah (gelar terakhir tercantum dalam SK Kepangkatan atau Surat Pencantuman Gelar Pendidikan terakhir atau surat keterangan proses pecantuman gelar)",
     },
     {
       text: "Usia maksimal pada 1 September 2020 bagi :",
