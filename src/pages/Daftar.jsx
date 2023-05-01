@@ -4,21 +4,10 @@ import Swal from "sweetalert2";
 
 const Daftar = () => {
   const [value, setValue] = useState("");
-  const [provs, setProvs] = useState([]);
   const [data, setData] = useState([]);
-
-  const handleSelectChange = (event) => {
-    setValue(event.target.value);
-  };
 
   const Alert = () => {
     Swal.fire("Good job!", "Data Anda Sudah Tersimpan !", "success");
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // kirim data form ke server atau lakukan proses lainnya
-    // setelah proses selesai, panggil fungsi untuk merefresh halaman
-    window.location.reload();
   };
 
   //   useEffect(() => {
@@ -31,26 +20,20 @@ const Daftar = () => {
   // });
   useEffect(() => {
     axios
-      .get(
-        "https://pkgstore.datahub.io/core/world-cities/world-cities_json/data/5b3dd46ad10990bca47b04b4739a02ba/world-cities_json.json"
-      )
+      .get("https://644f3068b61a9f0c4d1dbc40.mockapi.io/provinsi")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
 
-  //removing duplicate country names
-  let country = [...new Set(data.map((item) => item.country))];
-  country.sort();
-
   return (
-    <div className="max-w-7xl md:mx-auto mx-5 ">
+    <div className="max-w-5xl md:mx-auto mx-5 ">
       <div className="my-16">
         <h1 className="text-xl font-semibold pb-3">
           Angkatan Tahun 2023 Gelombang 2
         </h1>
         <p>Dibuka : 26 April 2023 | Ditutup : 03 Mei 2023</p>
       </div>
-      <form className="container bg-slate-300" onConfirm={handleSubmit}>
+      <form className="container bg-gray-200">
         <div className="">
           <h1 className="bg-blue-600 mb-4 pl-5">Formulir Pendaftaran Online</h1>
         </div>
@@ -71,12 +54,10 @@ const Daftar = () => {
               <p>Status Pelamar * :</p>
               <p className="text-red-600 text-sm italic">* Requester status</p>
             </div>
-            <div className="">
+            <div className="mx-4">
               <select
-                className="rounded-sm border-gray-300 border-2 block mt-2 "
-                id="question"
-                onChange={(e) => setValue(e.target.value)}
-                value={value}
+                id="status"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-64 p-1"
               >
                 <option>Pilih Status</option>
                 <option>Parsial</option>
@@ -89,9 +70,9 @@ const Daftar = () => {
               <p>Nama Lengkap * :</p>
               <p className="text-red-600">Full Name</p>
             </div>
-            <div className="mt-1">
+            <div className="mt-1 mx-4">
               <input
-                className="border border-gray-400 md:w-64 placeholder-gray-300"
+                className="border rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Nama Lengkap Tanpa Gelar"
               />
             </div>
@@ -100,13 +81,13 @@ const Daftar = () => {
             <div className="mx-5">
               <p>Gelar SKCPNS :</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Gelar Depan"
               />
               <input
-                className="border border-gray-400 md:w-64 placeholder-gray-300"
+                className="border rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Gelar Belakang"
               />
               <p className="text-red-500 text-sm pt-2">
@@ -118,13 +99,13 @@ const Daftar = () => {
             <div className="mx-5">
               <p>Gelar SK Terakhir :</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Gelar Depan"
               />
               <input
-                className="border border-gray-400 md:w-64 placeholder-gray-300"
+                className="border rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Gelar Belakang"
               />
               <p className="text-red-500 text-sm pt-2">
@@ -137,9 +118,9 @@ const Daftar = () => {
               <p>Tempat Lahir * :</p>
               <p className="text-red-500 text-sm italic">* Birth Place</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Kota Saja"
               />
             </div>
@@ -149,9 +130,9 @@ const Daftar = () => {
               <p>Tanggal Lahir * :</p>
               <p className="text-red-500 text-sm italic">* Birth Day</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" Tanggal-Bulan-Tahun"
               />
             </div>
@@ -161,18 +142,18 @@ const Daftar = () => {
               <p>NIP * :</p>
               <p className="text-red-500 text-sm italic">* NIP</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <div className="md:flex gap-2 grid">
                 <input
-                  className="border mb-3 border-gray-400 w-32 placeholder-gray-300"
+                  className="border mb-3 rounded-md border-gray-400 w-32 placeholder-gray-300"
                   placeholder=" XXXXXXX"
                 />
                 <input
-                  className="border mb-3 border-gray-400 w-24 placeholder-gray-300"
+                  className="border mb-3 rounded-md border-gray-400 w-24 placeholder-gray-300"
                   placeholder=" XXXX"
                 />
                 <input
-                  className="border mb-3 border-gray-400 w-20 placeholder-gray-300"
+                  className="border mb-3 rounded-md border-gray-400 w-20 placeholder-gray-300"
                   placeholder=" XX "
                 />
               </div>
@@ -183,9 +164,9 @@ const Daftar = () => {
               <p>NO KTP * :</p>
               <p className="text-red-500 text-sm italic">* NIK</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" XXXXXXXXXXXXXX"
               />
             </div>
@@ -195,9 +176,9 @@ const Daftar = () => {
               <p>Alamat Sesuai KTP * :</p>
               <p className="text-red-500 text-sm italic">* Address</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" XXXXXXXXXXXXXX"
               />
             </div>
@@ -207,9 +188,9 @@ const Daftar = () => {
               <p>Telepon Rumah * :</p>
               <p className="text-red-500 text-sm italic">* Phone Number</p>
             </div>
-            <div className="mt-1 grid">
+            <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
                 placeholder=" 08XXXXXXXXXXXX"
               />
             </div>
@@ -255,11 +236,9 @@ const Daftar = () => {
                 id="countries"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-64 p-1"
               >
-                <option>Select Country</option>
-                {country?.map((item, index) => (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
+                <option>Pilih Daerah</option>
+                {data.map((i) => (
+                  <option key={i}>{i.nama}</option>
                 ))}
               </select>
             </div>
@@ -272,7 +251,7 @@ const Daftar = () => {
         </div>
         <div className="grid grid-cols-2 pt-5 border-b pb-5 border-b-gray-600">
           <div className="mx-4">
-            <p  className="">Jenis Pegawai :</p>
+            <p className="">Jenis Pegawai :</p>
             <p className="text-red-500 text-sm italic">* yang diinginkan</p>
           </div>
           <div className="mx-4">
@@ -309,7 +288,7 @@ const Daftar = () => {
         </div>
         <div className="grid grid-cols-2 pt-5 border-b pb-5 border-b-gray-600">
           <h1 className="mx-5">Asal Daerah :</h1>
-          <div>
+          <div className="mx-4">
             <div className="">
               <input
                 id="default-radio-1"
@@ -349,14 +328,14 @@ const Daftar = () => {
           </div>
           <div className="mx-4">
             <select
-              id="countries"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="golongan"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-64 p-1"
             >
               <option value="">Jenis Pegawai</option>
-              <option value="Jabatan Struktural"> Tenaga Kesehatan</option>
-              <option value="Fungsional Umum">Tenaga non Kesehatan</option>
-              <option value="Fungsional Tertentu">fungsional Tertentu</option>
-              <option value="WI/Dosen">Dosen Poltekkes Kemenkes</option>
+              <option value=""> Tenaga Kesehatan</option>
+              <option value="">Tenaga non Kesehatan</option>
+              <option value="">fungsional Tertentu</option>
+              <option value="">Dosen Poltekkes Kemenkes</option>
             </select>
             <p className="text-red-600 text-sm italic">
               Peneliti masuk dalam rumpung Non Kesehatan
@@ -368,7 +347,10 @@ const Daftar = () => {
             <p>Jabatan :</p>
           </div>
           <div className="mx-4">
-            <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <select
+              id="countries"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-64 p-1"
+            >
               <option value="">Pilih Jabatan</option>
             </select>
             <p className="text-red-600 text-sm italic"></p>
@@ -376,18 +358,18 @@ const Daftar = () => {
         </div>
         <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
           <p className="mx-5">No. SK PNS * :</p>
-          <div className="mt-1 grid mr-4">
+          <div className="mt-1 grid mx-4">
             <input
-              className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
               placeholder=" XXXXXXXXXXXXXX"
             />
           </div>
         </div>
         <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
           <p className="mx-5">Tanggal SK PNS * :</p>
-          <div className="mt-1 grid mr-4">
+          <div className="mt-1 grid mx-4">
             <input
-              className="border mb-3 border-gray-400 md:w-64 placeholder-gray-300"
+              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
               placeholder=" XXXXXXXXXXXXXX"
             />
           </div>
@@ -399,8 +381,11 @@ const Daftar = () => {
           <div className="mx-4">
             <div className="grid grid-cols-2 pt-5 border-b pb-5 border-b-gray-600">
               <p>Status Kepegawaian :</p>
-              <div>
-                <select className="bg-gray-50 border md:w-64 w-full rounded-md p-2">
+              <div className="mx-4">
+                <select
+                  id="status_kepegawaian"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-64 p-1"
+                >
                   <option value="">Kepesertaan</option>
                   <option value="PNS">PNS Pusat</option>
                 </select>
