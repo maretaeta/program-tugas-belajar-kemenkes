@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Daftar = () => {
-  const [value, setValue] = useState("");
   const [data, setData] = useState([]);
+
+  const navigate = useNavigate();
+  const handleClickHome = (i) => {
+    navigate("/");
+  };
 
   const Alert = () => {
     Swal.fire("Good job!", "Data Anda Sudah Tersimpan !", "success");
   };
 
-  //   useEffect(() => {
-  //   axios
-  //     .get(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`)
-  //     .then((response) => {
-  //       setProvs(response.data);
-  //       console.log(provs); // tambahkan ini untuk memeriksa nilai dari variable provs
-  //     });
-  // });
   useEffect(() => {
     axios
       .get("https://644f3068b61a9f0c4d1dbc40.mockapi.io/provinsi")
@@ -33,9 +30,11 @@ const Daftar = () => {
         </h1>
         <p>Dibuka : 26 April 2023 | Ditutup : 03 Mei 2023</p>
       </div>
-      <form className="container bg-gray-200">
+      <form className="container bg-gray-200 mb-16">
         <div className="">
-          <h1 className="bg-blue-600 mb-4 pl-5">Formulir Pendaftaran Online</h1>
+          <h1 className="bg-blue-600 mb-4 py-3 pl-5 font-bold text-xl text-white">
+            Formulir Pendaftaran Online
+          </h1>
         </div>
         <div className="">
           <div className="pb-5 mx-5">
@@ -245,7 +244,7 @@ const Daftar = () => {
           </div>
         </div>
         <div className="pt-5">
-          <h1 className="bg-blue-600 mb-4 pl-5">
+          <h1 className="bg-blue-600 mb-4 pl-5 py-3 font-bold text-xl text-white">
             Persayaratan Status Kepegawaian
           </h1>
         </div>
@@ -375,12 +374,12 @@ const Daftar = () => {
           </div>
         </div>
         <div>
-          <p className="bg-blue-600 text-white pl-5 font-semibold">
+          <p className="bg-blue-600 py-3 pl-5 font-bold text-xl text-white">
             Data Pengusul
           </p>
-          <div className="mx-4">
+          <div className="">
             <div className="grid grid-cols-2 pt-5 border-b pb-5 border-b-gray-600">
-              <p>Status Kepegawaian :</p>
+              <p className="mx-4">Status Kepegawaian :</p>
               <div className="mx-4">
                 <select
                   id="status_kepegawaian"
@@ -394,10 +393,42 @@ const Daftar = () => {
             </div>
           </div>
         </div>
+        <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <p className="mx-5">Alamat Email * :</p>
+          <div className="mt-1 grid mx-4">
+            <input
+              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+              placeholder=" XXXXXXXXXXXXXX"
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <p className="mx-5">Ulangi Email * :</p>
+          <div className="mt-1 grid mx-4">
+            <input
+              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+              placeholder=" XXXXXXXXXXXXXX"
+            />
+          </div>
+        </div>
+        <div className="mx-auto grid justify-center">
+          <button
+            className="px-3 mt-7 py-2 rounded-md text-white bg-blue-600 mx-auto shadow-md"
+            onClick={Alert}
+          >
+            Submit
+          </button>
+          <div className="text-sm flex gap-2 pt-2 pb-14">
+            <p>apakah ingin kembali kehalaman utama ? </p>{" "}
+            <p
+              className="text-blue-600"
+              onClick={() => handleClickHome(Daftar.i)}
+            >
+              Home
+            </p>
+          </div>
+        </div>
       </form>
-      <div>
-        <button onClick={Alert}>Submit</button>
-      </div>
     </div>
   );
 };
