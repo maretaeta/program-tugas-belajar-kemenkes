@@ -11,7 +11,7 @@ const Ketentuan = () => {
         <h1 className="font-semibold text-xl ">
           A. Ketentuan dan Persyaratan Calon Peserta Tugas Belajar SDM Kesehatan
         </h1>
-        <ol className="list-decimal pl-11 text-lg">
+        <ol className="list-decimal pl-11 text-lg leading-8">
           <li>PNS Kementerian Kesehatan.</li>
           <li>
             PNS tenaga kesehatan yang bertugas di Dinas Kesehatan Prov/Kab/Kota,
@@ -23,6 +23,7 @@ const Ketentuan = () => {
           <li>
             Telah penyesuaian Ijazah
             <span className="italic">
+              {" "}
               (gelar terakhir tercantum dalam SK Kepangkatan atau Surat
               Pencantuman Gelar Pendidikan terakhir atau surat keterangan proses
               pecantuman gelar)

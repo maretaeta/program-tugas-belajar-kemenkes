@@ -233,7 +233,7 @@ const Navbar = () => {
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="flex w-full justify-center gap-1 rounded-md ">
-                    Download Dokumen
+                    Dokumen
                     <ChevronDownIcon
                       className=" h-5 w-5 text-gray-400 mt-1"
                       aria-hidden="true"

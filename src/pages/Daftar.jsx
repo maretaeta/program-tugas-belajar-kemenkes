@@ -214,8 +214,8 @@ const Daftar = () => {
               </select>
             </div>
           </div>
-          {provs.map((q) => (
-            <div className="grid grid-cols-2 pt-5" key={q.id}>
+          {provs.map((q, i) => (
+            <div className="grid grid-cols-2 pt-5" key={i}>
               <div className="mx-5">
                 <p>Jenjang Pendidikan * :</p>
                 <p className="text-red-600 text-sm italic">* yang diinginkan</p>
