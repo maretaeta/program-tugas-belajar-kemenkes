@@ -6,7 +6,7 @@ const Kontak = () => {
     <div className="mx-5 max-w-4xl justify-center lg:mx-auto mt-16 relative z-20">
       <div className="md:flex gap-20 ">
         <div className="text-center max-w-5xl mx-auto py-10">
-          <h1 className="font-bold text-3xl pb-5 text-start">TERHUBUNG DENGAN KAMI</h1>
+          <h1 className="font-bold text-3xl pb-5 text-center">TERHUBUNG DENGAN KAMI</h1>
           <div className="mx-auto  grid justify-center">
             <div className=" flex pb-4 gap-1">
               <p className="text-2xl text-blue-600">

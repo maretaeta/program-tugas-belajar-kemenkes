@@ -7,7 +7,7 @@ import Pendaftaran from "./pages/Info/Pendaftaran";
 import Prosedur from "./pages/Info/Prosedur";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
-import  Daftar  from "./pages/Daftar";
+import Daftar from "./pages/Daftar";
 import Dokumen from "./pages/Dokumen";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Footer } from "./components/Footer";
@@ -43,12 +43,15 @@ const App = () => {
           <Route path="/Pendaftaran" element={<Pendaftaran />} />
           <Route path="/Prosedur" element={<Prosedur />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Materi_Pertemuan" element={<MateriPertemuan/>} />
+          <Route path="/Materi_Pertemuan" element={<MateriPertemuan />} />
           <Route path="/Penelitian" element={<Penelitian />} />
           <Route path="/Peraturan" element={<Peraturan />} />
           <Route path="/SK" element={<SK />} />
           <Route path="/Surat_Edaran" element={<SuratEdaran />} />
-          <Route path="/Transportasi_Kedatangan" element={<TransportKedatangan />} />
+          <Route
+            path="/Transportasi_Kedatangan"
+            element={<TransportKedatangan />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
