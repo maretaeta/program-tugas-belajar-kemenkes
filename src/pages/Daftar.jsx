@@ -23,7 +23,7 @@ const Daftar = () => {
   }, []);
 
   return (
-    <div className="max-w-5xl md:mx-auto mx-5 ">
+    <div className="max-w-5xl mx-16 lg:mx-auto">
       <div className="my-16">
         <h1 className="text-xl font-semibold pb-3">
           Angkatan Tahun 2023 Gelombang 2
@@ -64,29 +64,29 @@ const Daftar = () => {
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 pb-4 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Nama Lengkap * :</p>
-              <p className="text-red-600">Full Name</p>
+              <p className="text-red-600 text-sm italic">* Full Name</p>
             </div>
             <div className="mt-1 mx-4">
               <input
-                className="border rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Nama Lengkap Tanpa Gelar"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Gelar SKCPNS :</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Gelar Depan"
               />
               <input
-                className="border rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Gelar Belakang"
               />
               <p className="text-red-500 text-sm pt-2">
@@ -94,17 +94,17 @@ const Daftar = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Gelar SK Terakhir :</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Gelar Depan"
               />
               <input
-                className="border rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Gelar Belakang"
               />
               <p className="text-red-500 text-sm pt-2">
@@ -112,31 +112,31 @@ const Daftar = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Tempat Lahir * :</p>
               <p className="text-red-500 text-sm italic">* Birth Place</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Kota Saja"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Tanggal Lahir * :</p>
               <p className="text-red-500 text-sm italic">* Birth Day</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" Tanggal-Bulan-Tahun"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>NIP * :</p>
               <p className="text-red-500 text-sm italic">* NIP</p>
@@ -158,38 +158,38 @@ const Daftar = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>NO KTP * :</p>
               <p className="text-red-500 text-sm italic">* NIK</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" XXXXXXXXXXXXXX"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Alamat Sesuai KTP * :</p>
               <p className="text-red-500 text-sm italic">* Address</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" XXXXXXXXXXXXXX"
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+          <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
             <div className="mx-5">
               <p>Telepon Rumah * :</p>
               <p className="text-red-500 text-sm italic">* Phone Number</p>
             </div>
             <div className="mt-1 grid mx-4">
               <input
-                className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+                className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
                 placeholder=" 08XXXXXXXXXXXX"
               />
             </div>
@@ -355,20 +355,20 @@ const Daftar = () => {
             <p className="text-red-600 text-sm italic"></p>
           </div>
         </div>
-        <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+        <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
           <p className="mx-5">No. SK PNS * :</p>
           <div className="mt-1 grid mx-4">
             <input
-              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+              className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
               placeholder=" XXXXXXXXXXXXXX"
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+        <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
           <p className="mx-5">Tanggal SK PNS * :</p>
           <div className="mt-1 grid mx-4">
             <input
-              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+              className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
               placeholder=" XXXXXXXXXXXXXX"
             />
           </div>
@@ -393,20 +393,20 @@ const Daftar = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+        <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
           <p className="mx-5">Alamat Email * :</p>
           <div className="mt-1 grid mx-4">
             <input
-              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+              className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
               placeholder=" XXXXXXXXXXXXXX"
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 border-b border-b-gray-600 pt-4">
+        <div className="grid md:grid-cols-2 border-b border-b-gray-600 pt-4">
           <p className="mx-5">Ulangi Email * :</p>
           <div className="mt-1 grid mx-4">
             <input
-              className="border mb-3 rounded-md border-gray-400 md:w-64 placeholder-gray-300"
+              className="border mb-3 rounded-md border-gray-400 w-64 placeholder-gray-300"
               placeholder=" XXXXXXXXXXXXXX"
             />
           </div>
